@@ -1,0 +1,5 @@
+{
+	"enabled": true,
+	"sendToAlert": true,
+	"sendToNotice": true
+}
