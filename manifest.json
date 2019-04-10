@@ -1,17 +1,17 @@
 {
-	"files": {
-		"README.md": "0a785d3ebdfea8def20d0f8795a3c5195b122ea7bfee6ba35842f3a28ea78123",
-		"config.json": "e49d999ef015da3faa2c4e476ebe61b4b320c9ec1e086240aae2e0c4d0d4c671",
-		"index.js": "78cbb48836a3b149092f4052a48ea0e0efc7f0ec0acd9394efc33f89f0edef55",
-		"module.json": "23eeaa6b76c06ecc85dccece0d3efb9dbbb298116486c53127f83181ebc55398"
-	},
-	"defs": {
-		"S_CHAT": 2,
-		"S_DESPAWN_COLLECTION": 2,
-		"S_DESPAWN_DROPITEM": 4,
-		"S_DUNGEON_EVENT_MESSAGE": 2,
-		"S_LOAD_TOPO": 3,
-		"S_SPAWN_COLLECTION": 4,
-		"S_SPAWN_DROPITEM": 6
-	}
+    "files": {
+        "README.md": "d911ce62d2d3588ced5c5da2b51a9a8e4fb0d7978f7c683181ae73cd9f93017a",
+        "index.js": "d04a35e8dffd58aa644a7dfd8163c093632b34f4add9a4caa043faa6b7a5dbea",
+        "module.json": "94e1cfbbd6aa9c399ea834bb1b1734f7db444406d0e2a37af11edf8ae5d3f70a",
+        "settings_migrator.js": "d6bb8b864c215e1d68ad6d913840cb2a028e592c30dd9967700dabdbdbd272b8"
+    },
+    "defs": {
+        "S_CHAT": 2,
+        "S_DESPAWN_COLLECTION": 2,
+        "S_DESPAWN_DROPITEM": 4,
+        "S_DUNGEON_EVENT_MESSAGE": 2,
+        "S_LOAD_TOPO": 3,
+        "S_SPAWN_COLLECTION": 4,
+        "S_SPAWN_DROPITEM": 7
+    }
 }

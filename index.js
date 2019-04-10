@@ -1,46 +1,28 @@
 module.exports = function Gathering(mod) {
+	const command = mod.command || mod.require.command;
 	
-	const plants = {
-		1: {name:'特殊', msg:'坚韧的杂草'},
-		2: {name:'植物', msg:'野生玉米'},
-		3: {name:'植物', msg:'野生红葡萄'},
-		4: {name:'植物', msg:'黄蘑菇'},
-		5: {name:'植物', msg:'老南瓜'},
-		6: {name:'植物', msg:'苹果树'}
+	if (mod.proxyAuthor !== 'caali') {
+		const options = require('./module').options
+		if (options) {
+			const settingsVersion = options.settingsVersion
+			if (settingsVersion) {
+				mod.settings = require('./' + (options.settingsMigrator || 'module_settings_migrator.js'))(mod.settings._version, settingsVersion, mod.settings)
+				mod.settings._version = settingsVersion
+			}
+		}
 	}
-	const mining = {
-		101: {name:'特殊', msg:'岩石'},
-		102: {name:'矿石', msg:'钴矿石'},
-		103: {name:'矿石', msg:'硒矿石'},
-		104: {name:'矿石', msg:'水晶矿石'},
-		105: {name:'矿石', msg:'秘银矿石'},
-		106: {name:'矿石', msg:'碣矿石'}
-	}
-	const energy = {
-		201: {name:'特殊', msg:'无色结晶'},
-		202: {name:'精气', msg:'赤色结晶'},
-		203: {name:'精气', msg:'绿色结晶'},
-		204: {name:'精气', msg:'青色结晶'},
-		205: {name:'精气', msg:'白色结晶'},
-		206: {name:'精气', msg:'被污染的花'}
-	}
-	
-	let {
-		enabled,
-		sendToAlert,
-		sendToNotice,
-	} = require('./config.json')
 	
 	let plantsMarkers = false,
 		miningMarkers = false,
-		energyMarkers = false,
-		othersMarkers = false,
-		mobid = []
+		energyMarkers = false
 	
-	mod.command.add('采集', (arg) => {
+	let mobid = [],
+		gatherMarker = []
+	
+	command.add('采集', (arg) => {
 		if (!arg) {
-			enabled = !enabled;
-			if (!enabled) {
+			mod.settings.enabled = !mod.settings.enabled;
+			if (!mod.settings.enabled) {
 				plantsMarkers = false
 				miningMarkers = false
 				energyMarkers = false
@@ -48,16 +30,16 @@ module.exports = function Gathering(mod) {
 					despawnItem(itemId)
 				}
 			}
-			sendMessage('模块 ' + (enabled ? BLU('开启') : YEL('关闭')))
+			sendMessage('模块 ' + (mod.settings.enabled ? BLU('开启') : YEL('关闭')))
 		} else {
 			switch (arg) {
 				case "警告":
-					sendToAlert = !sendToAlert
-					sendMessage('警告消息 ' + (sendToAlert ? BLU('启用') : YEL('禁用')))
+					mod.settings.sendToAlert = !mod.settings.sendToAlert
+					sendMessage('警告消息 ' + (mod.settings.sendToAlert ? BLU('启用') : YEL('禁用')))
 					break
 				case "通知":
-					sendToNotice = !sendToNotice
-					sendMessage('通知消息 ' + (sendToNotice ? BLU('启用') : YEL('禁用')))
+					mod.settings.sendToNotice = !mod.settings.sendToNotice
+					sendMessage('通知消息 ' + (mod.settings.sendToNotice ? BLU('启用') : YEL('禁用')))
 					break
 					
 				case "状态":
@@ -89,22 +71,20 @@ module.exports = function Gathering(mod) {
 	})
 	
 	mod.hook('S_SPAWN_COLLECTION', 4, (event) => {
-		if (enabled) {
-			if (plantsMarkers && plants[event.id]) {
-				alertMessage('发现 [' + plants[event.id].name + '] ' + plants[event.id].msg)
-				noticeMessage('发现 [' + plants[event.id].name + '] ' + plants[event.id].msg)
-			}
-			else if (miningMarkers && mining[event.id]) {
-				alertMessage('发现 [' + mining[event.id].name + '] ' + mining[event.id].msg)
-				noticeMessage('发现 [' + mining[event.id].name + '] ' + mining[event.id].msg)
-			}
-			else if (energyMarkers && energy[event.id]) {
-				alertMessage('发现 [' + energy[event.id].name + '] ' + energy[event.id].msg)
-				noticeMessage('发现 [' + energy[event.id].name + '] ' + energy[event.id].msg)
-			}
-			else {
+		if (mod.settings.enabled) {
+			if (plantsMarkers && (gatherMarker = mod.settings.plants.find(obj => obj.id === event.id))) {
+				alertMessage( '发现 [' + gatherMarker.name + '] ' + gatherMarker.msg)
+				noticeMessage('发现 [' + gatherMarker.name + '] ' + gatherMarker.msg)
+			} else if (miningMarkers && (gatherMarker = mod.settings.mining.find(obj => obj.id === event.id))) {
+				alertMessage( '发现 [' + gatherMarker.name + '] ' + gatherMarker.msg)
+				noticeMessage('发现 [' + gatherMarker.name + '] ' + gatherMarker.msg)
+			} else if (energyMarkers && (gatherMarker = mod.settings.energy.find(obj => obj.id === event.id))) {
+				alertMessage( '发现 [' + gatherMarker.name + '] ' + gatherMarker.msg)
+				noticeMessage('发现 [' + gatherMarker.name + '] ' + gatherMarker.msg)
+			} else {
 				return true
 			}
+			
 			spawnItem(event.gameId, event.loc)
 			mobid.push(event.gameId)
 		}
@@ -112,6 +92,7 @@ module.exports = function Gathering(mod) {
 	
 	mod.hook('S_DESPAWN_COLLECTION', 2, (event) => {
 		if (mobid.includes(event.gameId)) {
+			gatherMarker = []
 			despawnItem(event.gameId)
 			mobid.splice(mobid.indexOf(event.gameId), 1)
 		}
@@ -119,10 +100,10 @@ module.exports = function Gathering(mod) {
 	
 	function spawnItem(gameId, loc) {
 		loc.z = loc.z - 100
-		mod.send('S_SPAWN_DROPITEM', 6, {
+		mod.send('S_SPAWN_DROPITEM', 7, {
 			gameId: gameId*100n,
 			loc: loc,
-			item: 98260,
+			item: mod.settings.markerId,
 			amount: 1,
 			expiry: 999999,
 			owners: [{
@@ -138,7 +119,7 @@ module.exports = function Gathering(mod) {
 	}
 	
 	function alertMessage(msg) {
-		if (sendToAlert) {
+		if (mod.settings.sendToAlert) {
 			mod.send('S_DUNGEON_EVENT_MESSAGE', 2, {
 				type: 43,
 				chat: 0,
@@ -149,10 +130,10 @@ module.exports = function Gathering(mod) {
 	}
 	
 	function noticeMessage(msg) {
-		if (sendToNotice) {
+		if (mod.settings.sendToNotice) {
 			mod.send('S_CHAT', 2, {
 				channel: 25,
-				authorName: '采集',
+				authorName: 'TIP',
 				message: msg
 			})
 		}
@@ -160,9 +141,9 @@ module.exports = function Gathering(mod) {
 	
 	function gatheringStatus() {
 		sendStatus(
-			`模块 : ${enabled ? BLU('开启') : YEL('关闭')}`,
-			`警告消息 : ${sendToAlert ? BLU('启用') : YEL('禁用')}`,
-			`通知消息 : ${sendToNotice ? BLU('启用') : YEL('禁用')}`,
+			`模块 : ${mod.settings.enabled ? BLU('开启') : YEL('关闭')}`,
+			`警告消息 : ${mod.settings.sendToAlert ? BLU('启用') : YEL('禁用')}`,
+			`通知消息 : ${mod.settings.sendToNotice ? BLU('启用') : YEL('禁用')}`,
 			
 			`植物提示 : ${plantsMarkers ? BLU('显示') : YEL('隐藏')}`,
 			`矿石提示 : ${miningMarkers ? BLU('显示') : YEL('隐藏')}`,
@@ -171,11 +152,11 @@ module.exports = function Gathering(mod) {
 	}
 	
 	function sendStatus(msg) {
-		mod.command.message([...arguments].join('\n\t - '))
+		command.message([...arguments].join('\n\t - '))
 	}
 	
 	function sendMessage(msg) {
-		mod.command.message(msg)
+		command.message(msg)
 	}
 	
 	function BLU(bluetext) {

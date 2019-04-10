@@ -1,12 +1,16 @@
 {
-	"disableAutoUpdate": false,
-	"name": "Gathering",
-	"options": {
-		"niceName": "采集提示",
-		"guiName": "采集提示"
-	},
-	"author": "ZC",
-	"description": "采集物位置标记",
-	"servers": ["https://raw.githubusercontent.com/zc149352394/Gathering/master/"],
-	"supportUrl": "https://github.com/zc149352394/Gathering/issues"
+    "disableAutoUpdate": false,
+    "name": "Gathering",
+    "options": {
+        "niceName": "采集提示",
+        "guiName": "采集提示",
+        "settingsFile": "config.json",
+        "settingsMigrator": "settings_migrator.js",
+        "settingsVersion": 1
+    },
+    "author": "ZC",
+    "description": "采集物位置标记",
+    "servers": ["https://raw.githubusercontent.com/zc149352394/Gathering/master/"],
+    "supportUrl": "https://github.com/zc149352394/Gathering/issues",
+    "version": "80.04"
 }
