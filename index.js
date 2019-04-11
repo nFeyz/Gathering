@@ -6,7 +6,7 @@ module.exports = function Gathering(mod) {
 		if (options) {
 			const settingsVersion = options.settingsVersion
 			if (settingsVersion) {
-				mod.settings = require('./' + (options.settingsMigrator || 'module_settings_migrator.js'))(mod.settings._version, settingsVersion, mod.settings)
+				mod.settings = require('./' + (options.settingsMigrator || 'settings_migrator.js'))(mod.settings._version, settingsVersion, mod.settings)
 				mod.settings._version = settingsVersion
 			}
 		}
@@ -19,7 +19,7 @@ module.exports = function Gathering(mod) {
 	let mobid = [],
 		gatherMarker = []
 	
-	command.add('采集', (arg) => {
+	mod.command.add('采集', (arg) => {
 		if (!arg) {
 			mod.settings.enabled = !mod.settings.enabled;
 			if (!mod.settings.enabled) {
@@ -66,7 +66,7 @@ module.exports = function Gathering(mod) {
 		}
 	})
 	
-	mod.hook('S_LOAD_TOPO', 3, (event) => {
+	mod.game.me.on('change_zone', (zone, quick) => {
 		mobid = []
 	})
 	

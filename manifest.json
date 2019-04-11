@@ -1,7 +1,7 @@
 {
     "files": {
         "README.md": "d911ce62d2d3588ced5c5da2b51a9a8e4fb0d7978f7c683181ae73cd9f93017a",
-        "index.js": "d04a35e8dffd58aa644a7dfd8163c093632b34f4add9a4caa043faa6b7a5dbea",
+        "index.js": "a1f9d0b415a32c93677dfbac70bcd9219e9adad0e0cb0610516b85c0f8f02b36",
         "module.json": "94e1cfbbd6aa9c399ea834bb1b1734f7db444406d0e2a37af11edf8ae5d3f70a",
         "settings_migrator.js": "d6bb8b864c215e1d68ad6d913840cb2a028e592c30dd9967700dabdbdbd272b8"
     },
@@ -10,7 +10,6 @@
         "S_DESPAWN_COLLECTION": 2,
         "S_DESPAWN_DROPITEM": 4,
         "S_DUNGEON_EVENT_MESSAGE": 2,
-        "S_LOAD_TOPO": 3,
         "S_SPAWN_COLLECTION": 4,
         "S_SPAWN_DROPITEM": 7
     }
