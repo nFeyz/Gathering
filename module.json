@@ -12,5 +12,5 @@
     "description": "采集物位置标记",
     "servers": ["https://raw.githubusercontent.com/zc149352394/Gathering/master/"],
     "supportUrl": "https://github.com/zc149352394/Gathering/issues",
-    "version": "80.04"
+    "version": "81.03"
 }

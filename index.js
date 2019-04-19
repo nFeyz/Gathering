@@ -19,7 +19,7 @@ module.exports = function Gathering(mod) {
 	let mobid = [],
 		gatherMarker = []
 	
-	mod.command.add('采集', (arg) => {
+	mod.command.add("采集", (arg) => {
 		if (!arg) {
 			mod.settings.enabled = !mod.settings.enabled;
 			if (!mod.settings.enabled) {
@@ -30,16 +30,16 @@ module.exports = function Gathering(mod) {
 					despawnItem(itemId)
 				}
 			}
-			sendMessage('模块 ' + (mod.settings.enabled ? BLU('开启') : YEL('关闭')))
+			sendMessage("模块 " + (mod.settings.enabled ? BLU("开启") : YEL("关闭")))
 		} else {
 			switch (arg) {
 				case "警告":
 					mod.settings.sendToAlert = !mod.settings.sendToAlert
-					sendMessage('警告消息 ' + (mod.settings.sendToAlert ? BLU('启用') : YEL('禁用')))
+					sendMessage("警告消息 " + (mod.settings.sendToAlert ? BLU("启用") : YEL("禁用")))
 					break
 				case "通知":
 					mod.settings.sendToNotice = !mod.settings.sendToNotice
-					sendMessage('通知消息 ' + (mod.settings.sendToNotice ? BLU('启用') : YEL('禁用')))
+					sendMessage("通知消息 " + (mod.settings.sendToNotice ? BLU("启用") : YEL("禁用")))
 					break
 					
 				case "状态":
@@ -48,19 +48,19 @@ module.exports = function Gathering(mod) {
 				
 				case "植物":
 					plantsMarkers = !plantsMarkers
-					sendMessage('植物提示 ' + (plantsMarkers ? BLU('显示') : YEL('隐藏')))
+					sendMessage("植物提示 " + (plantsMarkers ? BLU("显示") : YEL("隐藏")))
 					break
 				case "矿石":
 					miningMarkers = !miningMarkers
-					sendMessage('矿石提示 ' + (miningMarkers ? BLU('显示') : YEL('隐藏')))
+					sendMessage("矿石提示 " + (miningMarkers ? BLU("显示") : YEL("隐藏")))
 					break
 				case "精气":
 					energyMarkers = !energyMarkers
-					sendMessage('精气提示 ' + (energyMarkers ? BLU('显示') : YEL('隐藏')))
+					sendMessage("精气提示 " + (energyMarkers ? BLU("显示") : YEL("隐藏")))
 					break
 				
 				default :
-					sendMessage(RED('无效的参数!'))
+					sendMessage(RED("无效的参数!"))
 					break
 			}
 		}
@@ -73,14 +73,14 @@ module.exports = function Gathering(mod) {
 	mod.hook('S_SPAWN_COLLECTION', 4, (event) => {
 		if (mod.settings.enabled) {
 			if (plantsMarkers && (gatherMarker = mod.settings.plants.find(obj => obj.id === event.id))) {
-				alertMessage( '发现 [' + gatherMarker.name + '] ' + gatherMarker.msg)
-				noticeMessage('发现 [' + gatherMarker.name + '] ' + gatherMarker.msg)
+				alertMessage( "发现 [" + gatherMarker.name + "] " + gatherMarker.msg)
+				noticeMessage("发现 [" + gatherMarker.name + "] " + gatherMarker.msg)
 			} else if (miningMarkers && (gatherMarker = mod.settings.mining.find(obj => obj.id === event.id))) {
-				alertMessage( '发现 [' + gatherMarker.name + '] ' + gatherMarker.msg)
-				noticeMessage('发现 [' + gatherMarker.name + '] ' + gatherMarker.msg)
+				alertMessage( "发现 [" + gatherMarker.name + "] " + gatherMarker.msg)
+				noticeMessage("发现 [" + gatherMarker.name + "] " + gatherMarker.msg)
 			} else if (energyMarkers && (gatherMarker = mod.settings.energy.find(obj => obj.id === event.id))) {
-				alertMessage( '发现 [' + gatherMarker.name + '] ' + gatherMarker.msg)
-				noticeMessage('发现 [' + gatherMarker.name + '] ' + gatherMarker.msg)
+				alertMessage( "发现 [" + gatherMarker.name + "] " + gatherMarker.msg)
+				noticeMessage("发现 [" + gatherMarker.name + "] " + gatherMarker.msg)
 			} else {
 				return true
 			}
@@ -133,7 +133,7 @@ module.exports = function Gathering(mod) {
 		if (mod.settings.sendToNotice) {
 			mod.send('S_CHAT', 2, {
 				channel: 25,
-				authorName: 'TIP',
+				authorName: "TIP",
 				message: msg
 			})
 		}
