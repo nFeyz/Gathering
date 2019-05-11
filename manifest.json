@@ -1,15 +1,12 @@
 {
     "files": {
-        "README.md": "d911ce62d2d3588ced5c5da2b51a9a8e4fb0d7978f7c683181ae73cd9f93017a",
-        "index.js": "09dab8047d521c74bbc6ef658fd1fbdb193184ef9d858fee380a3aa912846fb6",
-        "module.json": "2b2c67bbe17528344af0883f3b8c849033395ad452633d664c655c3ddb7a8faf",
-        "settings_migrator.js": "d6bb8b864c215e1d68ad6d913840cb2a028e592c30dd9967700dabdbdbd272b8"
+        "index.js": "e0cd110fb984dac29b481a250791aa797682cd1c050413c4223e50e7d400b4a4",
+        "module.json": "fcc489aedb4ea2f8a8ca3662a63faf28786dc2460802c4a14d612293fba6b025",
+        "settings_migrator.js": "dbb3eadcb00c4391231ee2d058e1b5c8a68f28c26deaac8cd8aefe91c9b16880"
     },
     "defs": {
-        "S_CHAT": 2,
         "S_DESPAWN_COLLECTION": 2,
         "S_DESPAWN_DROPITEM": 4,
-        "S_DUNGEON_EVENT_MESSAGE": 2,
         "S_SPAWN_COLLECTION": 4,
         "S_SPAWN_DROPITEM": 7
     }
