@@ -16,3 +16,7 @@ Gathering 采集提示
 采集 矿石 | 发现[矿石]提示
 采集 植物 | 发现[植物]提示
 采集 精气 | 发现[精气]提示
+
+------
+
+更多采集物查询: https://teralore.com/tw/gatherables/
