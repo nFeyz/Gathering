@@ -123,9 +123,9 @@ module.exports = function Gathering(mod) {
 			item: mod.settings.markerId,
 			amount: 1,
 			expiry: 999999,
-			owners: [{
-				id: 0
-			}]
+			owners: [
+				{playerId: mod.game.me.playerId}
+			]
 		})
 	}
 	
