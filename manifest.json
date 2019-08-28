@@ -1,13 +1,13 @@
 {
     "files": {
-        "index.js": "2574539bf0c834c294604b37962eb0a9f1126ba225e78b56965aed629f80c7a8",
-        "module.json": "fcc489aedb4ea2f8a8ca3662a63faf28786dc2460802c4a14d612293fba6b025",
+        "index.js": "172817b8de64992cac379843efa4ac1e1e0f335c8fbddfbdf9315a78bb67b79a",
+        "module.json": "141eb9e3cab495fafeaa196ccb27ed22092fcbbe1d77bef637dd4ecfa6d12684",
         "settings_migrator.js": "dbb3eadcb00c4391231ee2d058e1b5c8a68f28c26deaac8cd8aefe91c9b16880"
     },
     "defs": {
         "S_DESPAWN_COLLECTION": 2,
         "S_DESPAWN_DROPITEM": 4,
         "S_SPAWN_COLLECTION": 4,
-        "S_SPAWN_DROPITEM": 7
+        "S_SPAWN_DROPITEM": 8
     }
 }

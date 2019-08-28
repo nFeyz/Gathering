@@ -117,15 +117,12 @@ module.exports = function Gathering(mod) {
 	
 	function spawnItem(gameId, loc) {
 		loc.z = loc.z - 100
-		mod.send('S_SPAWN_DROPITEM', 7, {
+		mod.send('S_SPAWN_DROPITEM', 8, {
 			gameId: gameId*100n,
 			loc: loc,
 			item: mod.settings.markerId,
 			amount: 1,
-			expiry: 999999,
-			owners: [
-				{playerId: mod.game.me.playerId}
-			]
+			expiry: 999999
 		})
 	}
 	

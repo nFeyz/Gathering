@@ -1,9 +1,8 @@
 {
-    "disableAutoUpdate": false,
     "name": "Gathering",
     "options": {
         "niceName": "采集提示",
-        "guiName": "采集提示",
+        "guiName": "采集提示(Gathering)",
         "settingsFile": "config.json",
         "settingsMigrator": "settings_migrator.js",
         "settingsVersion": 1
@@ -15,5 +14,5 @@
     "dependencies": {
         "tera-message": "https://raw.githubusercontent.com/tera-mod/tera-message/master/module.json"
     },
-    "version": "81.03"
+    "version": "85.06"
 }
