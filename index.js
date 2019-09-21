@@ -2,17 +2,6 @@ module.exports = function Gathering(mod) {
 	const Message = require('../tera-message')
 	const MSG = new Message(mod)
 	
-	if (mod.proxyAuthor !== 'caali') {
-		const options = require('./module').options
-		if (options) {
-			const settingsVersion = options.settingsVersion
-			if (settingsVersion) {
-				mod.settings = require('./' + (options.settingsMigrator || 'settings_migrator.js'))(mod.settings._version, settingsVersion, mod.settings)
-				mod.settings._version = settingsVersion
-			}
-		}
-	}
-	
 	let plantsMarkers = false,
 		miningMarkers = false,
 		energyMarkers = false
@@ -131,5 +120,4 @@ module.exports = function Gathering(mod) {
 			gameId: gameId*100n
 		})
 	}
-	
 }
