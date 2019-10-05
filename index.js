@@ -11,7 +11,7 @@ module.exports = function Gathering(mod) {
 	
 	function gatheringStatus() {
 		sendStatus(
-			"Gathering: " + (mod.settings.enabled ? MSG.BLU("开启") : MSG.YEL("关闭")),
+			"Gathering: " + (mod.settings.enabled     ? MSG.BLU("开启") : MSG.YEL("关闭")),
 			"警告消息: " + (mod.settings.sendToAlert  ? MSG.BLU("启用") : MSG.YEL("禁用")),
 			"通知消息: " + (mod.settings.sendToNotice ? MSG.BLU("启用") : MSG.YEL("禁用")),
 			
@@ -105,9 +105,8 @@ module.exports = function Gathering(mod) {
 	})
 	
 	function spawnItem(gameId, loc) {
-		loc.z = loc.z - 100
 		mod.send('S_SPAWN_DROPITEM', 8, {
-			gameId: gameId*100n,
+			gameId: gameId*10n,
 			loc: loc,
 			item: mod.settings.markerId,
 			amount: 1,
@@ -117,7 +116,7 @@ module.exports = function Gathering(mod) {
 	
 	function despawnItem(gameId) {
 		mod.send('S_DESPAWN_DROPITEM', 4, {
-			gameId: gameId*100n
+			gameId: gameId*10n
 		})
 	}
 }
