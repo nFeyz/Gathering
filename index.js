@@ -1,19 +1,25 @@
 module.exports = function Gathering(mod) {
 	let plantsMarkers = false,
 		miningMarkers = false,
-		energyMarkers = false
+		energyMarkers = false,
+		plants = false,
+		mining = false,
+		energy = false
 	
 	let mobid = [],
 		gatherMarker = []
 	
 	function gatheringStatus() {
 		sendStatus(
-			"Gathering: " + (mod.settings.enabled     ? "On"   : "Off"),
+			"Gathering: "+ (mod.settings.enabled      ? "On"   : "Off"),
 			"警告消息: " + (mod.settings.sendToAlert  ? "启用" : "禁用"),
 			
 			"植物提示: " + (plantsMarkers ? "显示" : "隐藏"),
 			"矿石提示: " + (miningMarkers ? "显示" : "隐藏"),
-			"精气提示: " + (energyMarkers ? "显示" : "隐藏")
+			"精气提示: " + (energyMarkers ? "显示" : "隐藏"),
+			"杂草: "     + (plants        ? "显示" : "隐藏"),
+			"岩石: "     + (mining        ? "显示" : "隐藏"),
+			"无色: "     + (energy        ? "显示" : "隐藏"),
 		)
 	}
 	
@@ -28,6 +34,9 @@ module.exports = function Gathering(mod) {
 				plantsMarkers = false
 				miningMarkers = false
 				energyMarkers = false
+				plants = false
+				mining = false
+				energy = false
 				for (let itemId of mobid) {
 					despawnItem(itemId)
 				}
@@ -56,6 +65,19 @@ module.exports = function Gathering(mod) {
 					sendMessage("精气提示 " + (energyMarkers ? "显示" : "隐藏"))
 					break
 				
+				case "杂草":
+					plants = !plants
+					sendMessage("杂草 " + (plants ? "显示" : "隐藏"))
+					break
+				case "岩石":
+					mining = !mining
+					sendMessage("矿石 " + (mining ? "显示" : "隐藏"))
+					break
+				case "无色":
+					energy = !energy
+					sendMessage("无色 " + (energy ? "显示" : "隐藏"))
+					break
+				
 				default :
 					sendMessage("无效的参数!")
 					break
@@ -78,6 +100,15 @@ module.exports = function Gathering(mod) {
 			} else if (energyMarkers && (gatherMarker = mod.settings.energy.find(obj => obj.id === event.id))) {
 				sendAlert( ("发现 [" + gatherMarker.name + "] " + gatherMarker.msg), 44)
 				sendMessage("发现 [" + gatherMarker.name + "] " + gatherMarker.msg)
+			} else if (plants && event.id == 1) {
+				sendAlert( ("发现 [杂草] "), 44)
+				sendMessage("发现 [杂草] ")
+			} else if (mining && event.id == 101) {
+				sendAlert( ("发现 [矿石] "), 44)
+				sendMessage("发现 [矿石] ")
+			} else if (energy && event.id == 201) {
+				sendAlert( ("发现 [无色] "), 44)
+				sendMessage("发现 [无色] ")
 			} else {
 				return true
 			}

@@ -11,5 +11,5 @@
     "description": "采集物位置标记",
     "servers": ["https://raw.githubusercontent.com/tera-mod/Gathering/master/"],
     "supportUrl": "https://github.com/tera-mod/Gathering/issues",
-    "version": "86.06"
+    "version": "87.05"
 }

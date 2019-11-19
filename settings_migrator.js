@@ -3,7 +3,7 @@ const DefaultSettings = {
     "sendToAlert":  true, // 屏中警告提示
     "markerId":    98260, // 光柱提示物 98260 ---古龍貝勒古斯的頭
     "plants": [
-        {id: 1, name: '特殊', msg: '坚韧的杂草'},
+        // {id: 1, name: '特殊', msg: '坚韧的杂草'},
         {id: 2, name: '植物', msg: '野生玉米'},
         {id: 3 ,name: '植物', msg: '野生红葡萄'},
         {id: 4, name: '植物', msg: '黄蘑菇'},
@@ -11,7 +11,7 @@ const DefaultSettings = {
         {id: 6, name: '植物', msg: '苹果树'}
     ],
     "mining": [
-        {id: 101, name: '特殊', msg: '岩石'},
+        // {id: 101, name: '特殊', msg: '岩石'},
         {id: 102, name: '矿石', msg: '钴矿石'},
         {id: 103, name: '矿石', msg: '硒矿石'},
         {id: 104, name: '矿石', msg: '水晶矿石'},
@@ -19,7 +19,7 @@ const DefaultSettings = {
         {id: 106, name: '矿石', msg: '碣矿石'}
     ],
     "energy": [
-        {id: 201, name: '特殊', msg: '无色结晶'},
+        // {id: 201, name: '特殊', msg: '无色结晶'},
         {id: 202, name: '精气', msg: '赤色结晶'},
         {id: 203, name: '精气', msg: '绿色结晶'},
         {id: 204, name: '精气', msg: '青色结晶'},
