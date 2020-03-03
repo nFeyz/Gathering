@@ -132,7 +132,8 @@ module.exports = function Gathering(mod) {
 			loc: loc,
 			item: mod.settings.markerId,
 			amount: 1,
-			expiry: 999999
+			expiry: 999999,
+			owners: [{}]
 		})
 	}
 	
