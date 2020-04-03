@@ -29,7 +29,7 @@ module.exports = function Gathering(mod) {
 	
 	mod.command.add("采集", (arg) => {
 		if (!arg) {
-			mod.settings.enabled = !mod.settings.enabled;
+			mod.settings.enabled = !mod.settings.enabled
 			if (!mod.settings.enabled) {
 				plantsMarkers = false
 				miningMarkers = false
