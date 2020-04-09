@@ -1,7 +1,7 @@
 const DefaultSettings = {
     "enabled":     false,
     "sendToAlert":  true, // 屏中警告提示
-    "markerId":    98260, // 光柱提示物 98260 ---古龍貝勒古斯的頭
+    "markerId":    88704, // 貝利卡宴會紀念幣
     "plants": [
         // {id: 1, name: '特殊', msg: '坚韧的杂草'},
         {id: 2, name: '植物', msg: '野生玉米'},
