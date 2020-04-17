@@ -1,10 +1,10 @@
 module.exports = function Gathering(mod) {
-	let plantsMarkers = false,
-		miningMarkers = false,
-		energyMarkers = false,
-		plants = false,
-		mining = false,
-		energy = false
+	let plantsMarkers = true,
+		miningMarkers = true,
+		energyMarkers = true,
+		plants = true,
+		mining = true,
+		energy = true
 	
 	let mobid = [],
 		gatherMarker = []
