@@ -9,7 +9,7 @@
     },
     "author": "ZC/nFeyz",
     "description": "gathering markers for plants/ore/energy",
-    "servers": ["https://raw.githubusercontent.com/tera-mod/Gathering/master/"],
+    "servers": ["https://raw.githubusercontent.com/nFeyz/Gathering/master/"],
     "supportUrl": "https://github.com/nFeyz/Gathering/issues",
     "version": "92.03"
 }
