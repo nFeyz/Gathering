@@ -66,7 +66,7 @@ module.exports = function Gathering(mod) {
 					break
 				case "ore":
 					mod.settings.ore = !mod.settings.ore
-					sendMessage("mining " + (mod.settings.ore ? "Show" : "Hide"))
+					sendMessage("ore " + (mod.settings.ore ? "Show" : "Hide"))
 					break
 				case "energy":
 					mod.settings.energy = !mod.settings.energy
