@@ -11,5 +11,5 @@
     "description": "gathering markers for plants/ore/energy",
     "servers": ["https://raw.githubusercontent.com/nFeyz/Gathering/master/"],
     "supportUrl": "https://github.com/nFeyz/Gathering/issues",
-    "version": "92.03"
+    "version": "92.03.1"
 }
