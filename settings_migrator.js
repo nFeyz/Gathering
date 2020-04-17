@@ -2,29 +2,38 @@ const DefaultSettings = {
     "enabled":     false,
     "sendToAlert":  true, // on-screen warning prompt
     "markerId":    88704, //Velika Banquet commemorative coin
-    "plants": [
+	
+	"plants" : true,
+	"ore" : true,
+	"energy" : true,
+	"grass" : true,
+	"stone" : true,
+	"achromic" : true,
+	
+	
+    "Plants": [
         // {id: 1, name: 'special', msg: 'Tough Weed'},
-        {id: 2, name: 'plant', msg: 'Wild Cobseed'},
-        {id: 3 ,name: 'plant', msg: 'Veridia Root'},
-        {id: 4, name: 'plant', msg: 'Orange Mushroom'},
-        {id: 5, name: 'plant', msg: 'Moongourd'},
-        {id: 6, name: 'plant', msg: 'Apple Tree'}
+        {id: 2, name: 'Plant', msg: 'Wild Cobseed'},
+        {id: 3 ,name: 'Plant', msg: 'Veridia Root'},
+        {id: 4, name: 'Plant', msg: 'Orange Mushroom'},
+        {id: 5, name: 'Plant', msg: 'Moongourd'},
+        {id: 6, name: 'Plant', msg: 'Apple Tree'}
     ],
-    "ore": [
+    "Ore": [
         //{id: 101, name: 'special', msg: 'Plain Stone'},
-        {id: 102, name: 'ore', msg: 'Cobala Ore'},
-        {id: 103, name: 'ore', msg: 'Shadmetal Ore'},
-        {id: 104, name: 'ore', msg: 'Xermetal Ore'},
-        {id: 105, name: 'ore', msg: 'Normetal Ore'},
-        {id: 106, name: 'ore', msg: 'Galborne Ore'}
+        {id: 102, name: 'Ore', msg: 'Cobala Ore'},
+        {id: 103, name: 'Ore', msg: 'Shadmetal Ore'},
+        {id: 104, name: 'Ore', msg: 'Xermetal Ore'},
+        {id: 105, name: 'Ore', msg: 'Normetal Ore'},
+        {id: 106, name: 'Ore', msg: 'Galborne Ore'}
     ],
-    "energy": [
+    "Energy": [
         // {id: 201, name: 'special', msg: 'Achromic Essence'},
-        {id: 202, name: 'energy', msg: 'Crimson Essence'},
-        {id: 203, name: 'energy', msg: 'Earth Essence'},
-        {id: 204, name: 'energy', msg: 'Azure Essence'},
-        {id: 205, name: 'energy', msg: 'Opal Essence'},
-        {id: 206, name: 'energy', msg: 'Obsidian Essence'}
+        {id: 202, name: 'Energy', msg: 'Crimson Essence'},
+        {id: 203, name: 'Energy', msg: 'Earth Essence'},
+        {id: 204, name: 'Energy', msg: 'Azure Essence'},
+        {id: 205, name: 'Energy', msg: 'Opal Essence'},
+        {id: 206, name: 'Energy', msg: 'Obsidian Essence'}
     ]
 }
 
