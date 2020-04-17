@@ -11,7 +11,6 @@ Collection position mark
 --- | ---
 gathering | Turn on / off module
 gathering alert | 	Warning notification message on the screen
-gathering message | Prompt message in the leader notice
 gathering status | Query module status
 gathering plants | Found [plant] tips
 gathering mining | Found [Ore] Tips
