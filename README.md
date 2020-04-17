@@ -12,12 +12,15 @@ Collection position mark
 gathering | Turn on / off module
 gathering alert | 	Warning notification message on the screen
 gathering status | Query module status
-gathering plants | Found [plant] tips
-gathering mining | Found [Ore] Tips
-gathering energy | Found [Energy] tips
-gatherig grass | 	Found [Harmony Grass] tips
-gathering stone | Found [Plain Stone] Tip
-gathering achromic | Found [Achromic Essence] tips
+gathering plants | Show/Hide [plant] marker
+gathering mining | Show/Hide [Ore] marker
+gathering energy | Show/Hide [Energy] marker
+gatherig grass | 	Show/Hide [Harmony Grass] marker
+gathering stone | Show/Hide [Plain Stone] marker
+gathering achromic | Show/Hide [Achromic Essence] marker
+gathering all | Enable marker for all
+gathering none | Disable marker for all
+
 ------
 
 for more info: https://teralore.com/us/gatherables/
