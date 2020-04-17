@@ -41,7 +41,7 @@ module.exports = function Gathering(mod) {
 					despawnItem(itemId)
 				}
 			}
-			gatheringStatus()
+			
 		} else {
 			switch (arg) {
 				case "alert":
