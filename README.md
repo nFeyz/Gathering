@@ -12,7 +12,7 @@ Collection position mark
 gathering | Turn on / off module
 gathering status | Query module status
 gathering plants | Show/Hide [plant] marker
-gathering mining | Show/Hide [Ore] marker
+gathering ore | Show/Hide [Ore] marker
 gathering energy | Show/Hide [Energy] marker
 gatherig grass | 	Show/Hide [Harmony Grass] marker
 gathering stone | Show/Hide [Plain Stone] marker
