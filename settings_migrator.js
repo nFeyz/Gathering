@@ -3,7 +3,7 @@ const DefaultSettings = {
     "sendToAlert":  true, // on-screen warning prompt
     "markerId":    88704, //Velika Banquet commemorative coin
     "plants": [
-        // {id: 1, name: 'special', msg: 'tough weed'},
+        // {id: 1, name: 'special', msg: 'Tough Weed'},
         {id: 2, name: 'plant', msg: 'Wild Cobseed'},
         {id: 3 ,name: 'plant', msg: 'Veridia Root'},
         {id: 4, name: 'plant', msg: 'Orange Mushroom'},
