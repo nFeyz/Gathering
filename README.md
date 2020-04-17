@@ -10,7 +10,6 @@ Collection position mark
 /8 channel command  | DEscription
 --- | ---
 gathering | Turn on / off module
-gathering alert | 	Warning notification message on the screen
 gathering status | Query module status
 gathering plants | Show/Hide [plant] marker
 gathering mining | Show/Hide [Ore] marker
