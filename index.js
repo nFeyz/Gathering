@@ -1,6 +1,6 @@
 module.exports = function Gathering(mod) {
 	let plants = true,
-		mining = true,
+		ore = true,
 		energy = true,
 		grass = true,
 		stone = true,
@@ -15,7 +15,7 @@ module.exports = function Gathering(mod) {
 			"SendAlert: " + (mod.settings.sendToAlert  ? "Enable" : "Disable"),
 			
 			"plants: " + (plants ? "Show" : "Hide"),
-			"ore: " + (mining ? "Show" : "Hide"),
+			"ore: " + (ore ? "Show" : "Hide"),
 			"energy: " + (energy ? "Show" : "Hide"),
 			"grass: "     + (grass        ? "Show" : "Hide"),
 			"stone: "     + (stone        ? "Show" : "Hide"),
@@ -32,7 +32,7 @@ module.exports = function Gathering(mod) {
 			mod.settings.enabled = !mod.settings.enabled
 			if (!mod.settings.enabled) {
 				plants = false
-				mining = false
+				ore = false
 				energy = false
 				grass = false
 				stone = false
@@ -57,8 +57,8 @@ module.exports = function Gathering(mod) {
 					sendMessage("plant " + (plants ? "Show" : "Hide"))
 					break
 				case "ore":
-					mining = !mining
-					sendMessage("mining " + (mining ? "Show" : "Hide"))
+					ore = !ore
+					sendMessage("mining " + (ore ? "Show" : "Hide"))
 					break
 				case "energy":
 					energy = !energy
@@ -94,7 +94,7 @@ module.exports = function Gathering(mod) {
 			if (plants && (gatherMarker = mod.settings.plants.find(obj => obj.id === event.id))) {
 				sendAlert( ("Found [" + gatherMarker.name + "] " + gatherMarker.msg), 44)
 				sendMessage("Found [" + gatherMarker.name + "] " + gatherMarker.msg)
-			} else if (mining && (gatherMarker = mod.settings.mining.find(obj => obj.id === event.id))) {
+			} else if (ore && (gatherMarker = mod.settings.mining.find(obj => obj.id === event.id))) {
 				sendAlert( ("Found [" + gatherMarker.name + "] " + gatherMarker.msg), 44)
 				sendMessage("Found [" + gatherMarker.name + "] " + gatherMarker.msg)
 			} else if (energy && (gatherMarker = mod.settings.energy.find(obj => obj.id === event.id))) {
