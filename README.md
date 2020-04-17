@@ -17,8 +17,8 @@ gathering ore | Found [Ore] Tips
 gathering plants | Found [plant] tips
 gathering energy | Found [Energy] tips
 gatherig weeds | 	Found [weed] tips
-gathering stone | Found [Stone] Tip
-gathering colorless | Found [colorless] tips
+gathering stone | Found [Plain Stone] Tip
+gathering achromic | Found [Achromic Essence] tips
 ------
 
 for more info: https://teralore.com/us/gatherables/
