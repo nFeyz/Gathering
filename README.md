@@ -1,24 +1,24 @@
-Gathering 采集提示
+Gathering Tooltips
 ======
 
-# 功能简介
+# Function
 
-采集物位置标记
+Collection position mark
 
 ------
 
-/8频道 键入命令 | 效果说明
+/8 channel command  | DEscription
 --- | ---
-采集 | 开启/关闭模组
-采集 警告 | 在屏幕上警告通知消息
-采集 通知 | 在团长通知中提示消息
-采集 状态 | 查询模块状态
-采集 矿石 | 发现[矿石]提示
-采集 植物 | 发现[植物]提示
-采集 精气 | 发现[精气]提示
-采集 杂草 | 发现[杂草]提示
-采集 岩石 | 发现[岩石]提示
-采集 无色 | 发现[无色]提示
+gathering | Turn on / off module
+gathering alert | 	Warning notification message on the screen
+gathering message | Prompt message in the leader notice
+gathering status | Query module status
+gathering ore | Found [Ore] Tips
+gathering plants | Found [plant] tips
+gathering Energy | Found [jingqi] tips
+gatherig weeds | 	Found [weed] tips
+gathering plain stone | Found [Plain Stone] Tip
+gathering colorless | Found [colorless] tips
 ------
 
-更多采集物查询: https://teralore.com/tw/gatherables/
+for more info: https://teralore.com/us/gatherables/
