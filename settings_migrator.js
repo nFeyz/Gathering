@@ -1,30 +1,30 @@
 const DefaultSettings = {
     "enabled":     false,
-    "sendToAlert":  true, // 屏中警告提示
-    "markerId":    88704, // 貝利卡宴會紀念幣
+    "sendToAlert":  true, // on-screen warning prompt
+    "markerId":    88704, //Velika Banquet commemorative coin
     "plants": [
-        // {id: 1, name: '特殊', msg: '坚韧的杂草'},
-        {id: 2, name: '植物', msg: '野生玉米'},
-        {id: 3 ,name: '植物', msg: '野生红葡萄'},
-        {id: 4, name: '植物', msg: '黄蘑菇'},
-        {id: 5, name: '植物', msg: '老南瓜'},
-        {id: 6, name: '植物', msg: '苹果树'}
+        // {id: 1, name: 'special', msg: 'tough weed'},
+        {id: 2, name: 'plant', msg: 'Wild Cobseed'},
+        {id: 3 ,name: 'plant', msg: 'Veridia Root'},
+        {id: 4, name: 'plant', msg: 'Orange Mushroom'},
+        {id: 5, name: 'plant', msg: 'Moongourd'},
+        {id: 6, name: 'plant', msg: 'Apple Tree'}
     ],
     "mining": [
-        // {id: 101, name: '特殊', msg: '岩石'},
-        {id: 102, name: '矿石', msg: '钴矿石'},
-        {id: 103, name: '矿石', msg: '硒矿石'},
-        {id: 104, name: '矿石', msg: '水晶矿石'},
-        {id: 105, name: '矿石', msg: '秘银矿石'},
-        {id: 106, name: '矿石', msg: '碣矿石'}
+        //{id: 101, name: 'special', msg: 'Plain Stone'},
+        {id: 102, name: 'ore', msg: 'Cobala Ore'},
+        {id: 103, name: 'ore', msg: 'Shadmetal Ore'},
+        {id: 104, name: 'ore', msg: 'Xermetal Ore'},
+        {id: 105, name: 'ore', msg: 'Normetal Ore'},
+        {id: 106, name: 'ore', msg: 'Galborne Ore'}
     ],
     "energy": [
-        // {id: 201, name: '特殊', msg: '无色结晶'},
-        {id: 202, name: '精气', msg: '赤色结晶'},
-        {id: 203, name: '精气', msg: '绿色结晶'},
-        {id: 204, name: '精气', msg: '青色结晶'},
-        {id: 205, name: '精气', msg: '白色结晶'},
-        {id: 206, name: '精气', msg: '被污染的花'}
+        // {id: 201, name: 'special', msg: 'Achromic Essence'},
+        {id: 202, name: 'energy', msg: 'Crimson Essence'},
+        {id: 203, name: 'energy', msg: 'Earth Essence'},
+        {id: 204, name: 'energy', msg: 'Azure Essence'},
+        {id: 205, name: 'energy', msg: 'Opal Essence'},
+        {id: 206, name: 'energy', msg: 'Obsidian Essence'}
     ]
 }
 
