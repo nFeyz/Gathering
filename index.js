@@ -1,10 +1,10 @@
 module.exports = function Gathering(mod) {
-	let plants = true,
-		ore = true,
-		energy = true,
-		grass = true,
-		stone = true,
-		achromic = true
+	let plants = false,
+		ore = false,
+		energy = false,
+		grass = false,
+		stone = false,
+		achromic = false
 	
 	let mobid = [],
 		gatherMarker = []
@@ -31,12 +31,6 @@ module.exports = function Gathering(mod) {
 		if (!arg) {
 			mod.settings.enabled = !mod.settings.enabled
 			if (!mod.settings.enabled) {
-				plants = false
-				ore = false
-				energy = false
-				grass = false
-				stone = false
-				achromic = false
 				for (let itemId of mobid) {
 					despawnItem(itemId)
 				}
@@ -52,7 +46,27 @@ module.exports = function Gathering(mod) {
 					gatheringStatus()
 					break
 				
-				case "plant":
+				case "all":			
+					plants = true
+					ore = true
+					energy = true
+					grass = true
+					stone = true
+					achromic = true	
+					gatheringStatus()
+					break
+					
+				case "none":			
+					plants = false
+					ore = false
+					energy = false
+					grass = false
+					stone = false
+					achromic = false
+					gatheringStatus()
+					break
+								
+				case "plants":
 					plants = !plants
 					sendMessage("plant " + (plants ? "Show" : "Hide"))
 					break
