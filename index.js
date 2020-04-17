@@ -41,7 +41,7 @@ module.exports = function Gathering(mod) {
 					despawnItem(itemId)
 				}
 			}
-			
+			sendMessage("Gathering: "+ (mod.settings.enabled      ? "On"   : "Off"))
 		} else {
 			switch (arg) {
 				case "alert":
