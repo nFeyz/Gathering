@@ -12,14 +12,14 @@ module.exports = function Gathering(mod) {
 	function gatheringStatus() {
 		sendStatus(
 			"Gathering: "+ (mod.settings.enabled      ? "On"   : "Off"),
-			"警告消息: " + (mod.settings.sendToAlert  ? "启用" : "禁用"),
+			"SendAlert: " + (mod.settings.sendToAlert  ? "Enable" : "Disable"),
 			
-			"植物提示: " + (plantsMarkers ? "显示" : "隐藏"),
-			"矿石提示: " + (miningMarkers ? "显示" : "隐藏"),
-			"精气提示: " + (energyMarkers ? "显示" : "隐藏"),
-			"杂草: "     + (plants        ? "显示" : "隐藏"),
-			"岩石: "     + (mining        ? "显示" : "隐藏"),
-			"无色: "     + (energy        ? "显示" : "隐藏"),
+			"plantMarkers: " + (plantsMarkers ? "Show" : "Hide"),
+			"miningMarkers: " + (miningMarkers ? "Show" : "Hide"),
+			"energyMarkers: " + (energyMarkers ? "Show" : "Hide"),
+			"plant: "     + (plants        ? "Show" : "Hide"),
+			"mining: "     + (mining        ? "Show" : "Hide"),
+			"energy: "     + (energy        ? "Show" : "Hide"),
 		)
 	}
 	
@@ -27,7 +27,7 @@ module.exports = function Gathering(mod) {
 		sendMessage([...arguments].join('\n\t - '))
 	}
 	
-	mod.command.add("采集", (arg) => {
+	mod.command.add("gathering", (arg) => {
 		if (!arg) {
 			mod.settings.enabled = !mod.settings.enabled
 			if (!mod.settings.enabled) {
@@ -44,42 +44,42 @@ module.exports = function Gathering(mod) {
 			gatheringStatus()
 		} else {
 			switch (arg) {
-				case "警告":
+				case "alert":
 					mod.settings.sendToAlert = !mod.settings.sendToAlert
-					sendMessage("警告消息 " + (mod.settings.sendToAlert ? "启用" : "禁用"))
+					sendMessage("SendAlert" + (mod.settings.sendToAlert ? "Enable" : "Disable"))
 					break
-				case "状态":
+				case "status":
 					gatheringStatus()
 					break
 				
-				case "植物":
+				case "plant":
 					plantsMarkers = !plantsMarkers
-					sendMessage("植物提示 " + (plantsMarkers ? "显示" : "隐藏"))
+					sendMessage("plantMarkers " + (plantsMarkers ? "Show" : "Hide"))
 					break
-				case "矿石":
+				case "ore":
 					miningMarkers = !miningMarkers
-					sendMessage("矿石提示 " + (miningMarkers ? "显示" : "隐藏"))
+					sendMessage("miningMarkers " + (miningMarkers ? "Show" : "Hide"))
 					break
-				case "精气":
+				case "energy":
 					energyMarkers = !energyMarkers
-					sendMessage("精气提示 " + (energyMarkers ? "显示" : "隐藏"))
+					sendMessage("energyMarkers " + (energyMarkers ? "Show" : "Hide"))
 					break
 				
-				case "杂草":
+				case "weed":
 					plants = !plants
-					sendMessage("杂草 " + (plants ? "显示" : "隐藏"))
+					sendMessage("plants " + (plants ? "Show" : "Hide"))
 					break
-				case "岩石":
+				case "stone":
 					mining = !mining
-					sendMessage("矿石 " + (mining ? "显示" : "隐藏"))
+					sendMessage("mining " + (mining ? "Show" : "Hide"))
 					break
-				case "无色":
+				case "colourless":
 					energy = !energy
-					sendMessage("无色 " + (energy ? "显示" : "隐藏"))
+					sendMessage("energy " + (energy ? "Show" : "Hide"))
 					break
 				
 				default :
-					sendMessage("无效的参数!")
+					sendMessage("invalid prompt!")
 					break
 			}
 		}
@@ -92,23 +92,23 @@ module.exports = function Gathering(mod) {
 	mod.hook('S_SPAWN_COLLECTION', 4, (event) => {
 		if (mod.settings.enabled) {
 			if (plantsMarkers && (gatherMarker = mod.settings.plants.find(obj => obj.id === event.id))) {
-				sendAlert( ("发现 [" + gatherMarker.name + "] " + gatherMarker.msg), 44)
-				sendMessage("发现 [" + gatherMarker.name + "] " + gatherMarker.msg)
+				sendAlert( ("Found [" + gatherMarker.name + "] " + gatherMarker.msg), 44)
+				sendMessage("Found [" + gatherMarker.name + "] " + gatherMarker.msg)
 			} else if (miningMarkers && (gatherMarker = mod.settings.mining.find(obj => obj.id === event.id))) {
-				sendAlert( ("发现 [" + gatherMarker.name + "] " + gatherMarker.msg), 44)
-				sendMessage("发现 [" + gatherMarker.name + "] " + gatherMarker.msg)
+				sendAlert( ("Found [" + gatherMarker.name + "] " + gatherMarker.msg), 44)
+				sendMessage("Found [" + gatherMarker.name + "] " + gatherMarker.msg)
 			} else if (energyMarkers && (gatherMarker = mod.settings.energy.find(obj => obj.id === event.id))) {
-				sendAlert( ("发现 [" + gatherMarker.name + "] " + gatherMarker.msg), 44)
-				sendMessage("发现 [" + gatherMarker.name + "] " + gatherMarker.msg)
+				sendAlert( ("Found [" + gatherMarker.name + "] " + gatherMarker.msg), 44)
+				sendMessage("Found [" + gatherMarker.name + "] " + gatherMarker.msg)
 			} else if (plants && event.id == 1) {
-				sendAlert( ("发现 [杂草] "), 44)
-				sendMessage("发现 [杂草] ")
+				sendAlert( ("Found [weed] "), 44)
+				sendMessage("Found [weed] ")
 			} else if (mining && event.id == 101) {
-				sendAlert( ("发现 [矿石] "), 44)
-				sendMessage("发现 [矿石] ")
+				sendAlert( ("Found [ore] "), 44)
+				sendMessage("Found [ore] ")
 			} else if (energy && event.id == 201) {
-				sendAlert( ("发现 [无色] "), 44)
-				sendMessage("发现 [无色] ")
+				sendAlert( ("Found [clourless] "), 44)
+				sendMessage("Found [colourless] ")
 			} else {
 				return true
 			}
