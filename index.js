@@ -47,7 +47,7 @@ module.exports = function Gathering(mod) {
 					mod.settings.grass = true
 					mod.settings.stone = true
 					mod.settings.achromic = true	
-					mod.settings.gatheringStatus()
+					gatheringStatus()
 					break
 					
 				case "none":			
@@ -57,7 +57,7 @@ module.exports = function Gathering(mod) {
 					mod.settings.grass = false
 					mod.settings.stone = false
 					mod.settings.achromic = false
-					mod.settings.gatheringStatus()
+					gatheringStatus()
 					break
 								
 				case "plants":
