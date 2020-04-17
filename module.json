@@ -1,15 +1,15 @@
 {
     "name": "Gathering",
     "options": {
-        "niceName": "采集提示",
-        "guiName": "采集提示(Gathering)",
+        "niceName": "Gathering",
+        "guiName": "Gathering Markers",
         "settingsFile": "config.json",
         "settingsMigrator": "settings_migrator.js",
         "settingsVersion": 3
     },
-    "author": "ZC",
-    "description": "采集物位置标记",
+    "author": "ZC/nFeyz",
+    "description": "gathering markers for plants/ore/energy",
     "servers": ["https://raw.githubusercontent.com/tera-mod/Gathering/master/"],
-    "supportUrl": "https://github.com/tera-mod/Gathering/issues",
+    "supportUrl": "https://github.com/nFeyz/Gathering/issues",
     "version": "92.03"
 }
