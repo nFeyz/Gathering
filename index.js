@@ -1,11 +1,5 @@
 module.exports = function Gathering(mod) {
-	let plants = false,
-		ore = false,
-		energy = false,
-		grass = false,
-		stone = false,
-		achromic = false
-	
+
 	let mobid = [],
 		gatherMarker = []
 	
@@ -14,12 +8,12 @@ module.exports = function Gathering(mod) {
 			"Gathering: "+ (mod.settings.enabled      ? "On"   : "Off"),
 			"SendAlert: " + (mod.settings.sendToAlert  ? "Enable" : "Disable"),
 			
-			"plants: " + (plants ? "Show" : "Hide"),
-			"ore: " + (ore ? "Show" : "Hide"),
-			"energy: " + (energy ? "Show" : "Hide"),
-			"grass: "     + (grass        ? "Show" : "Hide"),
-			"stone: "     + (stone        ? "Show" : "Hide"),
-			"achromic: "     + (achromic        ? "Show" : "Hide"),
+			"plants: " + (mod.settings.plants ? "Show" : "Hide"),
+			"ore: " + (mod.settings.ore ? "Show" : "Hide"),
+			"energy: " + (mod.settings.energy ? "Show" : "Hide"),
+			"grass: "     + (mod.settings.grass        ? "Show" : "Hide"),
+			"stone: "     + (mod.settings.stone        ? "Show" : "Hide"),
+			"achromic: "     + (mod.settings.achromic        ? "Show" : "Hide"),
 		)
 	}
 	
@@ -47,49 +41,49 @@ module.exports = function Gathering(mod) {
 					break
 				
 				case "all":			
-					plants = true
-					ore = true
-					energy = true
-					grass = true
-					stone = true
-					achromic = true	
-					gatheringStatus()
+					mod.settings.plants = true
+					mod.settings.ore = true
+					mod.settings.energy = true
+					mod.settings.grass = true
+					mod.settings.stone = true
+					mod.settings.achromic = true	
+					mod.settings.gatheringStatus()
 					break
 					
 				case "none":			
-					plants = false
-					ore = false
-					energy = false
-					grass = false
-					stone = false
-					achromic = false
-					gatheringStatus()
+					mod.settings.plants = false
+					mod.settings.ore = false
+					mod.settings.energy = false
+					mod.settings.grass = false
+					mod.settings.stone = false
+					mod.settings.achromic = false
+					mod.settings.gatheringStatus()
 					break
 								
 				case "plants":
-					plants = !plants
-					sendMessage("plant " + (plants ? "Show" : "Hide"))
+					mod.settings.plants = !mod.settings.plants
+					sendMessage("plant " + (mod.settings.plants ? "Show" : "Hide"))
 					break
 				case "ore":
-					ore = !ore
-					sendMessage("mining " + (ore ? "Show" : "Hide"))
+					mod.settings.ore = !mod.settings.ore
+					sendMessage("mining " + (mod.settings.ore ? "Show" : "Hide"))
 					break
 				case "energy":
-					energy = !energy
-					sendMessage("energy " + (energy ? "Show" : "Hide"))
+					mod.settings.energy = !mod.settings.energy
+					sendMessage("energy " + (mod.settings.energy ? "Show" : "Hide"))
 					break
 				
 				case "grass":
-					grass = !grass
-					sendMessage("grass " + (grass ? "Show" : "Hide"))
+					mod.settings.grass = !mod.settings.grass
+					sendMessage("grass " + (mod.settings.grass ? "Show" : "Hide"))
 					break
 				case "stone":
-					stone = !stone
-					sendMessage("Plain stone " + (stone ? "Show" : "Hide"))
+					mod.settings.stone = !mod.settings.stone
+					sendMessage("Plain stone " + (mod.settings.stone ? "Show" : "Hide"))
 					break
 				case "achromic":
-					achromic = !achromic
-					sendMessage("Achromic Essence " + (achromic ? "Show" : "Hide"))
+					mod.settings.achromic = !mod.settings.achromic
+					sendMessage("Achromic Essence " + (mod.settings.achromic ? "Show" : "Hide"))
 					break
 				
 				default :
@@ -105,22 +99,22 @@ module.exports = function Gathering(mod) {
 	
 	mod.hook('S_SPAWN_COLLECTION', 4, (event) => {
 		if (mod.settings.enabled) {
-			if (plants && (gatherMarker = mod.settings.plants.find(obj => obj.id === event.id))) {
+			if (mod.settings.plants && (gatherMarker = mod.settings.Plants.find(obj => obj.id === event.id))) {
 				sendAlert( ("Found [" + gatherMarker.name + "] " + gatherMarker.msg), 44)
 				sendMessage("Found [" + gatherMarker.name + "] " + gatherMarker.msg)
-			} else if (ore && (gatherMarker = mod.settings.ore.find(obj => obj.id === event.id))) {
+			} else if (mod.settings.ore && (gatherMarker = mod.settings.Ore.find(obj => obj.id === event.id))) {
 				sendAlert( ("Found [" + gatherMarker.name + "] " + gatherMarker.msg), 44)
 				sendMessage("Found [" + gatherMarker.name + "] " + gatherMarker.msg)
-			} else if (energy && (gatherMarker = mod.settings.energy.find(obj => obj.id === event.id))) {
+			} else if (mod.settings.energy && (gatherMarker = mod.settings.Energy.find(obj => obj.id === event.id))) {
 				sendAlert( ("Found [" + gatherMarker.name + "] " + gatherMarker.msg), 44)
 				sendMessage("Found [" + gatherMarker.name + "] " + gatherMarker.msg)
-			} else if (grass && event.id == 1) {
+			} else if (mod.settings.grass && event.id == 1) {
 				sendAlert( ("Found [Harmony Grass] "), 44)
 				sendMessage("Found [Harmony Grass] ")
-			} else if (stone && event.id == 101) {
+			} else if (mod.settings.stone && event.id == 101) {
 				sendAlert( ("Found [Plain Stone] "), 44)
 				sendMessage("Found [Plain Stone] ")
-			} else if (achromic && event.id == 201) {
+			} else if (mod.settings.achromic && event.id == 201) {
 				sendAlert( ("Found [Achromic Essence] "), 44)
 				sendMessage("Found [Achromic Essence] ")
 			} else {
