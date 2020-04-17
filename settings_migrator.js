@@ -10,7 +10,7 @@ const DefaultSettings = {
         {id: 5, name: 'plant', msg: 'Moongourd'},
         {id: 6, name: 'plant', msg: 'Apple Tree'}
     ],
-    "mining": [
+    "ore": [
         //{id: 101, name: 'special', msg: 'Plain Stone'},
         {id: 102, name: 'ore', msg: 'Cobala Ore'},
         {id: 103, name: 'ore', msg: 'Shadmetal Ore'},
