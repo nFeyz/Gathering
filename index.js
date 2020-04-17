@@ -108,7 +108,7 @@ module.exports = function Gathering(mod) {
 			if (plants && (gatherMarker = mod.settings.plants.find(obj => obj.id === event.id))) {
 				sendAlert( ("Found [" + gatherMarker.name + "] " + gatherMarker.msg), 44)
 				sendMessage("Found [" + gatherMarker.name + "] " + gatherMarker.msg)
-			} else if (ore && (gatherMarker = mod.settings.mining.find(obj => obj.id === event.id))) {
+			} else if (ore && (gatherMarker = mod.settings.ore.find(obj => obj.id === event.id))) {
 				sendAlert( ("Found [" + gatherMarker.name + "] " + gatherMarker.msg), 44)
 				sendMessage("Found [" + gatherMarker.name + "] " + gatherMarker.msg)
 			} else if (energy && (gatherMarker = mod.settings.energy.find(obj => obj.id === event.id))) {
