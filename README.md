@@ -14,7 +14,7 @@ gathering status | Query module status
 gathering plants | Show/Hide [plant] marker
 gathering ore | Show/Hide [Ore] marker
 gathering energy | Show/Hide [Energy] marker
-gatherig grass | 	Show/Hide [Harmony Grass] marker
+gathering grass | 	Show/Hide [Harmony Grass] marker
 gathering stone | Show/Hide [Plain Stone] marker
 gathering achromic | Show/Hide [Achromic Essence] marker
 gathering all | Enable marker for all
