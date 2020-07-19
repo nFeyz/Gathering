@@ -1,5 +1,5 @@
 const DefaultSettings = {
-    "enabled":     false,
+    "enabled":     true,
     "sendToAlert":  true, // on-screen warning prompt
     "markerId":    88704, //Velika Banquet commemorative coin
 	
@@ -25,7 +25,9 @@ const DefaultSettings = {
         {id: 103, name: 'Ore', msg: 'Shadmetal Ore'},
         {id: 104, name: 'Ore', msg: 'Xermetal Ore'},
         {id: 105, name: 'Ore', msg: 'Normetal Ore'},
-        {id: 106, name: 'Ore', msg: 'Galborne Ore'}
+        {id: 106, name: 'Ore', msg: 'Galborne Ore'},
+        {id: 814, name: 'Ore', msg: 'Exodor Ore'},
+        {id: 301, name: 'Ore', msg: 'Pure Duranium Ore'}
     ],
     "Energy": [
         // {id: 201, name: 'special', msg: 'Achromic Essence'},
@@ -33,7 +35,8 @@ const DefaultSettings = {
         {id: 203, name: 'Energy', msg: 'Earth Essence'},
         {id: 204, name: 'Energy', msg: 'Azure Essence'},
         {id: 205, name: 'Energy', msg: 'Opal Essence'},
-        {id: 206, name: 'Energy', msg: 'Obsidian Essence'}
+        {id: 206, name: 'Energy', msg: 'Obsidian Essence'},
+        {id: 601, name: 'Energy', msg: 'Pure Duranium Crystal'}
     ]
 }
 

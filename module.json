@@ -5,11 +5,11 @@
         "guiName": "Gathering Markers",
         "settingsFile": "config.json",
         "settingsMigrator": "settings_migrator.js",
-        "settingsVersion": 3
+        "settingsVersion": 4
     },
     "author": "ZC/nFeyz",
     "description": "gathering markers for plants/ore/energy",
     "servers": ["https://raw.githubusercontent.com/nFeyz/Gathering/master/"],
     "supportUrl": "https://github.com/nFeyz/Gathering/issues",
-    "version": "92.03.3"
+    "version": "92.03.4"
 }
