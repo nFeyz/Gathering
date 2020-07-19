@@ -1,8 +1,8 @@
 {
     "files": {
-        "index.js": "8a1e8771c69d36872e886d67d17be3e7041bf9d6e7a9d3b5276c660dbda8243f",
-        "module.json": "4f27441a95cb18eeeabeae5211642955952f649bb0709a4363bff47856cd89f0",
-        "settings_migrator.js": "8fcae412b3e907d7af34fc3ffd1647ebcfd2049cd9a32d1627d3f3796d9214d3"
+        "index.js": "3e44cd95dbf74c46c631ba7054f47ef4955b3bdb2446bcad54fd817686621f5c",
+        "module.json": "6904553c1c5fa9fddb1b81afa42a9383b770e8892e77abe0e3516dfebd3615be",
+        "settings_migrator.js": "82cf93e1e63ee0d4658b6770f5b265a887bbdc129f4ae7469412048e27438e13"
     },
     "defs": {
         "S_DESPAWN_COLLECTION": 2,
