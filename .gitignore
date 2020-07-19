@@ -2,3 +2,6 @@
 config.json
 module.config.json
 desktop.ini
+Newtonsoft.Json.dll
+SHAGen.exe
+SHAGen.exe.config
